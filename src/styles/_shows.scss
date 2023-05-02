@@ -10,6 +10,11 @@
     grid-template-columns: 1fr 1fr 1fr; /* 3 COLUNAS */
     gap: 24px;/* AFASTAMENTO */
 
+    /* CELULAR */  
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
     &--is-active {
       display: grid;
     }
@@ -39,6 +44,11 @@
 
       &--is-active {
         border-color: variaveis.$corTextoSecundario;
+      }
+      /* CELULAR */
+      @media (max-width: 768px) {
+        font-size: 12px;
+        padding: 10px;
       }
     }
   }
