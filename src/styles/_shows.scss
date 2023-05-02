@@ -1,0 +1,55 @@
+@use 'variaveis';
+
+.shows {
+  padding: 2vw 5.6vw;
+  min-height: 50vw;/* ESPAÇAMENTO ANTES escolha seu plano */
+
+  &__list {
+    margin-top: 44px;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 COLUNAS */
+    gap: 24px;/* AFASTAMENTO */
+
+    /* CELULAR */  
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &--is-active {
+      display: grid;
+    }
+
+    &__item {
+      img {
+        max-width: 100%;/* PARA AJUSTAR NA TELA */
+        border-radius: 4px;
+      }
+    }
+  }
+  
+  &__tabs {
+    display: flex;
+    justify-content: center;
+
+    &__button {
+      color: variaveis.$corTextoSecundario;
+      font-size: 20px;
+      border: none;/* PARA REMOVER A BORDA */
+      padding-bottom: 5px;
+      background: none; /* BOTÃO SEM COR */
+      text-transform: uppercase;
+      margin: 0 1vw;
+      cursor: pointer;
+      border-bottom: 5px solid transparent;/* PARA FICAR SEM MOVIMENTO AO CLIC */
+
+      &--is-active {
+        border-color: variaveis.$corTextoSecundario;
+      }
+      /* CELULAR */
+      @media (max-width: 768px) {
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+  }
+}
